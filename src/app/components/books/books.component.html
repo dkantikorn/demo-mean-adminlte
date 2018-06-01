@@ -1,0 +1,65 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      AdminLTE MEAN Stack
+      <small>Books</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li>
+        <a href="#">
+          <i class="fa fa-dashboard"></i> Home</a>
+      </li>
+      <li class="active">Books</li>
+    </ol>
+  </section>
+  <section class="content">
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">{{ title }}</h3>
+
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-box-tool" data-widget="remove">
+            <i class="fa fa-remove"></i>
+          </button>
+        </div>
+
+
+        <form role="form">
+          <div class="input-group margin">
+            <input class="form-control" type="text" placeholder="Search book please enter name of book">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-primary">Search...</button>
+              <button type="button" class="btn btn-success">New</button>
+            </span>
+          </div>
+        </form>
+      </div>
+      <!-- /.box-header -->
+
+      <div class="box-body">
+        <table class="table table-bordered table-striped table-hover">
+          <tr>
+            <th class="text-center">ลำดับที่</th>
+            <th>ชื่อหนังสือ</th>
+            <th>การดำเนินการ</th>
+          </tr>
+
+          <tr *ngFor="let book of books;let i = index">
+            <td class="text-center">{{i + 1}}</td>
+            <td>{{book.name}}</td>
+            <td>
+              <button class="btn btn-danger btn-flat" (click)="onDelete(book.name)">
+                <i class="fa fa-trash"></i>
+                Delete
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
