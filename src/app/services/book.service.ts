@@ -37,6 +37,10 @@ export class BookService {
     return this.http.get<Book>(this.url + '/api/readAll');
   }
 
+
+  findBook(name:string){
+    return this.http.get<Book>(this.url + '/api/read/' + name);
+  }
   /**
    * 
    * Add for new book into the mongo database
@@ -48,6 +52,13 @@ export class BookService {
     return this.http.post<Book>(this.url + '/api/insertOne', data);
   }
 
+
+  /**
+   * 
+   * Function delete a book where user clicked on the button
+   * @author  sarawutt.b
+   * @param name as a string of book name
+   */
   delete(name: string) {
     return this.http.delete<Book>(this.url + '/api/deleteOne/' + name);
   }

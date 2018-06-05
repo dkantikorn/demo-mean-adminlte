@@ -30,10 +30,10 @@
 
         <form role="form">
           <div class="input-group margin">
-            <input class="form-control" type="text" placeholder="Search book please enter name of book">
+            <input class="form-control" type="text" placeholder="Search book please enter name of book" [(ngModel)]="name" name="name">
             <span class="input-group-btn">
-              <button type="button" class="btn btn-primary">Search...</button>
-              <button type="button" class="btn btn-success">New</button>
+              <button type="button" class="btn btn-primary" (click)="findBook()">Fine...</button>
+              <button type="button" class="btn btn-success" [routerLink]="['/books-add']">Add</button>
             </span>
           </div>
         </form>
